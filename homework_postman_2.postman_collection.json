@@ -48,6 +48,109 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "2",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" // http://162.55.220.72:5005/user_info_3\r",
+							" // 1. Отправить запрос.\r",
+							" // 2. Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"// 3. Спарсить response body в json.\r",
+							"var jsonRes = pm.response.json();\r",
+							"// 4. Проверить, что name в ответе равно name s request (name вбить руками.)\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    pm.expect(jsonRes.name).to.eql('Maxim');\r",
+							"});\r",
+							"// 5. Проверить, что age в ответе равно age s request (age вбить руками.)\r",
+							"pm.test(\"Your age\", function () {\r",
+							"    pm.expect(jsonRes.age).to.eql('23');\r",
+							"});\r",
+							"// 6. Проверить, что salary в ответе равно salary s request (salary вбить руками.)\r",
+							"pm.test(\"Your salary\", function () {\r",
+							"    pm.expect(jsonRes.salary).to.eql(1000);\r",
+							"});\r",
+							"// 7. Спарсить request.\r",
+							"// 8. Проверить, что name в ответе равно name s request (name забрать из request.)\r",
+							"var req = pm.request.body.formdata.toObject();\r",
+							"pm.test(\"request name\", function () {\r",
+							"    pm.expect(jsonRes.name).to.eql(req.name);\r",
+							"});\r",
+							"// 9. Проверить, что age в ответе равно age s request (age забрать из request.)\r",
+							"pm.test(\"request age\", function () {\r",
+							"    pm.expect(jsonRes.age).to.eql(req.age);\r",
+							"});\r",
+							"// 10. Проверить, что salary в ответе равно salary s request (salary забрать из request.)\r",
+							"pm.test(\"request salary\", function () {\r",
+							"    pm.expect(jsonRes.salary).to.eql(+req.salary);\r",
+							"});\r",
+							"// 11. Вывести в консоль параметр family из response.\r",
+							"var chiriq = pm.response.json();\r",
+							"console.log(\"параметр family из response =\", chiriq.family)\r",
+							"// 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)\r",
+							"pm.test(\"salary check\", function () {\r",
+							"    pm.expect(jsonRes.family.u_salary_1_5_year).to.eql(+req.salary*4);\r",
+							"});\r",
+							"console.log(jsonRes.family.u_salary_1_5_year)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Maxim",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "23",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5005/user_info_3",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"user_info_3"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
