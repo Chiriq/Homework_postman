@@ -22,6 +22,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
+							"// http://162.55.220.72:5005/first\r",
+							"// 1. Отправить запрос.\r",
+							"// 2. Статус код 200\r",
+							"// 3. Проверить, что в body приходит правильный string.\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});"
