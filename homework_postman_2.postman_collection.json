@@ -280,6 +280,10 @@
 							"// 7. Вывести в консоль параметр salary из request.\r",
 							"// 8. Вывести в консоль параметр salary из response.\r",
 							"console.log(jsonChir.salary)\r",
+							"console.log(reqchir.salary)\r",
+							"// 9. Вывести в консоль 0-й элемент параметра salary из response.\r",
+							"// 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.\r",
+							"// 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.\r",
 							""
 						],
 						"type": "text/javascript"
