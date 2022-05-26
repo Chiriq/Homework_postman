@@ -175,7 +175,7 @@
 						"exec": [
 							"// http://162.55.220.72:5005/object_info_3\r",
 							"// 1. Отправить запрос.\r",
-							"// 2. Статус код 200\r",
+							"// 2. Статус код 200.\r",
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
@@ -183,9 +183,9 @@
 							"// 4. Спарсить request.\r",
 							"var jsonRes = pm.response.json();\r",
 							"var req = pm.request.url.query.toObject();\r",
-							"// 5. Проверить, что name в ответе равно name s request (name забрать из request.)\r",
-							"// 6. Проверить, что age в ответе равно age s request (age забрать из request.)\r",
-							"// 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)\r",
+							"// 5. Проверить, что name в ответе равно name s request (name забрать из request)\r",
+							"// 6. Проверить, что age в ответе равно age s request (age забрать из request)\r",
+							"// 7. Проверить, что salary в ответе равно salary s request (salary забрать из request)\r",
 							"pm.test(\"Check name\", function () {\r",
 							"    pm.expect(jsonRes.name).to.eql(req.name);\r",
 							"});\r",
@@ -247,6 +247,48 @@
 							"key": "salary",
 							"value": "1000"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// http://162.55.220.72:5005/object_info_4\r",
+							"// 1. Отправить запрос.\r",
+							"// 2. Статус код 200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"// 3. Спарсить response body в json.\r",
+							"// 4. Спарсить request.\r",
+							"var jsonChir = pm.response.json();\r",
+							"var reqchir = pm.request.url.query.toObject();"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://162.55.220.72:5005/object_info_4",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5005",
+					"path": [
+						"object_info_4"
 					]
 				}
 			},
