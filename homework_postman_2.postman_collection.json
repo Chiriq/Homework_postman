@@ -286,7 +286,10 @@
 							"// 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.\r",
 							"console.log()\r",
 							"console.log()\r",
-							"console.log()"
+							"console.log()\r",
+							"// 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)\r",
+							"// 13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)\r",
+							"// 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)"
 						],
 						"type": "text/javascript"
 					}
