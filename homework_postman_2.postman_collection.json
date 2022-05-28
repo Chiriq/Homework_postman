@@ -335,7 +335,12 @@
 							"// 6. Спарсить response body в json.\r",
 							"// 7. Спарсить request.\r",
 							"var jsonCh = pm.response.json();\r",
-							"var reqch = pm.request.url.query.toObject();"
+							"var reqch = pm.request.url.query.toObject();\r",
+							"// 8. Проверить, что json response имеет параметр start_qa_salary\r",
+							"// 9. Проверить, что json response имеет параметр qa_salary_after_6_months\r",
+							"// 10. Проверить, что json response имеет параметр qa_salary_after_12_months\r",
+							"// 11. Проверить, что json response имеет параметр qa_salary_after_1.5_year\r",
+							"// 12. Проверить, что json response имеет параметр qa_salary_after_3.5_years"
 						],
 						"type": "text/javascript"
 					}
